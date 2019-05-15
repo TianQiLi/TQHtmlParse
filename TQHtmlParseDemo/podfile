@@ -6,5 +6,5 @@ target 'TQHtmlParseDemo' do
   # use_frameworks!
 
   # Pods for TQHtmlParseDemo
-    pod 'TQHtmlParse','~> 0.0.1'
+    pod 'TQHtmlParse','~> 0.0.2' 
 end
