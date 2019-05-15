@@ -40,8 +40,8 @@
     for (NSInteger i=0; tempArr&& i<tempArr.count; ++i) {
         KnowledgeContent * content=[tempArr objectAtIndex:i];
         if (content.type==KnowledgeContentTypeText) {
-             NSString * nodeText=[content.textContent string];
-             strContent=[NSString stringWithFormat:@"%@%@",strContent,nodeText];
+            NSString * nodeText=[content.textContent string];
+            strContent=[NSString stringWithFormat:@"%@%@",strContent,nodeText];
         }
     }
     strContent = [strContent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -51,7 +51,7 @@
 }
 
 + (NSArray *)parseDetailToImgArray:(NSString*)htmlCode{
-//    NSString * test = @"<html><div>qq<img src=\"http://www.w3school.com.cn/i/eg_tulip.jpg\" /></div><li><img src=\"https://imgsa.baidu.com/baike/c0%3Dbaike180%2C5%2C5%2C180%2C60/sign=ca5abb5b7bf0f736ccf344536b3cd87c/29381f30e924b899c83ff41c6d061d950a7bf697.jpg\" />qq</li><img src=\"http://img01.taopic.com/141128/240418-14112P9345826.jpg\" />11111111</html>";
+    //    NSString * test = @"<html><div>qq<img src=\"http://www.w3school.com.cn/i/eg_tulip.jpg\" /></div><li><img src=\"https://imgsa.baidu.com/baike/c0%3Dbaike180%2C5%2C5%2C180%2C60/sign=ca5abb5b7bf0f736ccf344536b3cd87c/29381f30e924b899c83ff41c6d061d950a7bf697.jpg\" />qq</li><img src=\"http://img01.taopic.com/141128/240418-14112P9345826.jpg\" />11111111</html>";
     NSDictionary *dic = [self parseDetailExtension:htmlCode];
     if (dic) {
         NSString * imgText = dic[@"urlStr"] ? dic[@"urlStr"] : @"";
@@ -61,4 +61,14 @@
     return [NSArray new];
 }
 
++ (NSString *)parseDetailToStr:(NSString*)htmlCode{
+    NSDictionary *dic = [self parseDetailExtension:htmlCode];
+    if (dic) {
+        NSString * imgText = dic[@"content"] ? dic[@"content"] : @"";
+        
+        return imgText;
+    }
+    return @"";
+}
 @end
+

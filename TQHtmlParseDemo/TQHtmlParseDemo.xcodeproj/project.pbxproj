@@ -13,6 +13,7 @@
 		1C7795BB228BEF1800247155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C7795BA228BEF1800247155 /* Assets.xcassets */; };
 		1C7795BE228BEF1800247155 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7795BC228BEF1800247155 /* LaunchScreen.storyboard */; };
 		1C7795C1228BEF1800247155 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C7795C0228BEF1800247155 /* main.m */; };
+		F363B3C64F117D0FC9650DF4 /* libPods-TQHtmlParseDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5860AF137C2B5C4A63E28CA5 /* libPods-TQHtmlParseDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		1C7795BD228BEF1800247155 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C7795BF228BEF1800247155 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1C7795C0228BEF1800247155 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5860AF137C2B5C4A63E28CA5 /* libPods-TQHtmlParseDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TQHtmlParseDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8748AA8186704A18CE319608 /* Pods-TQHtmlParseDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TQHtmlParseDemo.release.xcconfig"; path = "Target Support Files/Pods-TQHtmlParseDemo/Pods-TQHtmlParseDemo.release.xcconfig"; sourceTree = "<group>"; };
+		FFA776689CC9DAEA7BC46581 /* Pods-TQHtmlParseDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TQHtmlParseDemo.debug.xcconfig"; path = "Target Support Files/Pods-TQHtmlParseDemo/Pods-TQHtmlParseDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F363B3C64F117D0FC9650DF4 /* libPods-TQHtmlParseDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				1C7795B0228BEF1700247155 /* TQHtmlParseDemo */,
 				1C7795AF228BEF1700247155 /* Products */,
+				DD94434EAE7211F32B715790 /* Pods */,
+				F37FFEFA07ED249361348D4B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,6 +78,24 @@
 			path = TQHtmlParseDemo;
 			sourceTree = "<group>";
 		};
+		DD94434EAE7211F32B715790 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFA776689CC9DAEA7BC46581 /* Pods-TQHtmlParseDemo.debug.xcconfig */,
+				8748AA8186704A18CE319608 /* Pods-TQHtmlParseDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F37FFEFA07ED249361348D4B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5860AF137C2B5C4A63E28CA5 /* libPods-TQHtmlParseDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,6 +103,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C7795C4228BEF1800247155 /* Build configuration list for PBXNativeTarget "TQHtmlParseDemo" */;
 			buildPhases = (
+				457C000F432C48A45D80588D /* [CP] Check Pods Manifest.lock */,
 				1C7795AA228BEF1700247155 /* Sources */,
 				1C7795AB228BEF1700247155 /* Frameworks */,
 				1C7795AC228BEF1700247155 /* Resources */,
@@ -135,6 +161,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		457C000F432C48A45D80588D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TQHtmlParseDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1C7795AA228BEF1700247155 /* Sources */ = {
@@ -283,6 +334,7 @@
 		};
 		1C7795C5228BEF1800247155 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFA776689CC9DAEA7BC46581 /* Pods-TQHtmlParseDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +352,7 @@
 		};
 		1C7795C6228BEF1800247155 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8748AA8186704A18CE319608 /* Pods-TQHtmlParseDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
