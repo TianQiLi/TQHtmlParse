@@ -21,9 +21,11 @@
     NSLog(@"************原始html 源码:%@\n",strHtml);
     
     NSDictionary * dic = [HtmlParseManager parseDetailExtension:strHtml];
+    NSString * str = [HtmlParseManager parseDetailToStr:strHtml];
     NSArray * picArray = [HtmlParseManager parseDetailToImgArray:strHtml];
-    NSLog(@"************解析后:%@\n",dic);
-    NSLog(@"************解析图片:%@\n",picArray);
+    NSLog(@"************解析后完整内容:%@\n**********",dic);
+    NSLog(@"************解析后文本:%@\n*********",str);
+    NSLog(@"************解析图片:%@\n*********",picArray);
 }
 
 
